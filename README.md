@@ -10,22 +10,22 @@ node框架express系列教程
    <p>(6)访问 http://localhost:3000/ </p>
    <p>此时的目录结构</p>
 	<p>   	.
-	├── app.js
-	├── bin
-	│   └── www
-	├── package.json
-	├── public
-	│   ├── images
-	│   ├── javascripts
-	│   └── stylesheets
-	│       └── style.css
-	├── routes
-	│   ├── index.js
-	│   └── users.js
-	└── views
-	    ├── error.jade
-	    ├── index.jade
-	    └── layout.jade</p>
+	<p>├── app.js</p>
+	<p>├── bin</p>
+	<p>│   └── www</p>
+	<p>├── package.json</p>
+	<p>├── public</p>
+	<p>│   ├── images</p>
+	<p>│   ├── javascripts</p>
+	<p>│   └── stylesheets</p>
+	<p>│       └── style.css</p>
+	<p>├── routes</p>
+	<p>│   ├── index.js</p>
+	<p>│   └── users.js</p>
+	<p>└── views</p>
+	   <p>├── error.jade</p>
+	   <p>├── index.jade</p>
+	    <p>└── layout.jade</p>
 <p>二.连接数据库</p>
    <p>(1)下载mysql，使用一款界面工具比如：navicat,创建一个数据库，在数据库创建一个表</p>
    <p>(2)安装mysql依赖： npm install mysql --save</p>
