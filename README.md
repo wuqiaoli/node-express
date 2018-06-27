@@ -34,16 +34,16 @@ node框架express系列教程
       	2-1-1: 引入mysql模块:var mysql = require('mysql');
       	2-1-2: 创建数据库链接
   		let connection = mysql.createConnection({
-			host: '127.0.0.1',
-			user: 'root',  //用户名
-			password: 'root', //用户密码
-			database: '****' //database
+		host: '127.0.0.1',
+		user: 'root',  //用户名
+		password: 'root', //用户密码
+		database: '****' //database
 		});
 		2-1-3: 执行创建连接 
 		connection.connect();
 		2-1-4: 业务逻辑处理
-		  定义sql语句： let sql = 'select * from user' , //user是指查询的表名
-		  router.get('/', function(req, res, next) {
+		定义sql语句： let sql = 'select * from user' , //user是指查询的表名
+		router.get('/', function(req, res, next) {
 			connection.query(sql语句,function (err, result) {
 		        if(err){
 		          console.log('[SELECT ERROR] - ',err.message);
@@ -54,9 +54,9 @@ node框架express系列教程
 		        	data:result
 		        }
 		        res.send(obj);
-				});
 			});
-			module.exports = router;
+		});
+		module.exports = router;
 		2-1-5:访问路由
 		在app.js中引入
 		var user = require('./routes/users');
