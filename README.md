@@ -1,4 +1,5 @@
 # node-express
+<pre>
 node框架express系列教程<br> 
 一.搭建express框架<br> 
    使用express应用生成器,前提是已经安装好node<br> 
@@ -32,30 +33,30 @@ node框架express系列教程<br>
       	2.1： 如，创建一个用户查询接口，就以routes/user.js为例<br> 
       	首先: 引入mysql模块:var mysql = require('mysql');<br> 
       	其次: 创建数据库链接<br> 
-      		>let connection = mysql.createConnection({
+      		let connection = mysql.createConnection({
 				host: '127.0.0.1',
 				user: 'root',  //用户名
 				password: 'root', //用户密码
 				database: '****' //database
-			>});
+			});
 		然后: 执行创建连接 <br> 
 			connection.connect();
 		其次: 业务逻辑处理<br> 
 			  定义sql语句： let sql = 'select * from user' , //user是指查询的表名
-			  >router.get('/', function(req, res, next) {
-				>connection.query(sql语句,function (err, result) >{
-				        >if(err){
-				          >console.log('[SELECT ERROR] - >',err.message);
-				         > return;
-				        >}
-				        >let obj = {
+			  router.get('/', function(req, res, next) {
+				connection.query(sql语句,function (err, result) {
+				        if(err){
+				          console.log('[SELECT ERROR] - ',err.message);
+				          return;
+				        }
+				        let obj = {
 				        	status:'200',
 				        	data:result
-				        >}
-				        >res.send(obj);
-					>});
-				>});
-				>module.exports = router;
+				        }
+				        res.send(obj);
+					});
+				});
+				module.exports = router;
 		最后:访问路由<br> 
 			在app.js中引入<br> 
 			var user = require('./routes/users');<br> <br> 
@@ -73,6 +74,6 @@ node框架express系列教程<br>
 			具体代码：请一一对照这几个文件。<br> 
 	以上便是一个简单的express框架连接数据库的案例。<br> 
 
-
+</pre>
 
 
