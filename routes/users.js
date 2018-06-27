@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var mysql = require('mysql');
+const express = require('express');
+const router = express.Router();
+const mysql = require('mysql');
 //创建数据库连接
-var link = require('../db/db')
+const link = require('../db/db')
 //方法一：便于管理
-var connection = mysql.createConnection(link.mysql)
+let connection = mysql.createConnection(link.mysql)
 //方法二：便于管理
 // var connection = mysql.createConnection({
 // 	host: '127.0.0.1',
@@ -15,7 +15,7 @@ var connection = mysql.createConnection(link.mysql)
 //执行创建连接 
 connection.connect();
 //方法一：直接定义在router执行sql语句
-// var sql = 'SELECT * FROM user';
+// let sql = 'select * from user';
 //方法二：封装成一个模块，按需引入，便于管理
 const sql = require('../mysql/sql')
 /* GET users listing. */
