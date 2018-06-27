@@ -30,8 +30,10 @@ node框架express系列教程
    (1)下载mysql，使用一款界面工具比如：navicat,创建一个数据库，在数据库创建一个表
    (2)安装mysql依赖： npm install mysql --save
    (3)创建一个服务，本质就是一个接口（个人理解）
-      	2.1： 如，创建一个用户查询接口，就以routes/user.js为例
-      	2-1-1: 引入mysql模块:var mysql = require('mysql');
+      	2.1： 如，创建一个用户查询接口，
+      	就以routes/user.js为例
+      	2-1-1: 引入mysql模块
+      	var mysql = require('mysql');
       	2-1-2: 创建数据库链接
   		let connection = mysql.createConnection({
 		host: '127.0.0.1',
