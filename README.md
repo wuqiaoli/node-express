@@ -1,6 +1,6 @@
 # node-express
 node框架express系列教程
-一.搭建express框架
+<p>一.搭建express框架</p>
    使用express应用生成器,前提是已经安装好node
    (1)npm install express-generator -g
    (2)express 项目名称 如：express myexpress
