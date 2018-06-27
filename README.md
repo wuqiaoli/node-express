@@ -38,7 +38,7 @@ node框架express系列教程<br>
 				user: 'root',  //用户名
 				password: 'root', //用户密码
 				database: '****' //database
-			});
+		});
 		然后: 执行创建连接 <br> 
 			connection.connect();
 		其次: 业务逻辑处理<br> 
