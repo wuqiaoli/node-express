@@ -31,16 +31,16 @@ node框架express系列教程
    (2)安装mysql依赖： npm install mysql --save
    (3)创建一个服务，本质就是一个接口（个人理解）
       	2.1： 如，创建一个用户查询接口，
-      	就以routes/user.js为例
-      	2-1-1: 引入mysql模块
-      	var mysql = require('mysql');
-      	2-1-2: 创建数据库链接
-  		let connection = mysql.createConnection({
-		host: '127.0.0.1',
-		user: 'root',  //用户名
-		password: 'root', //用户密码
-		database: '****' //database
-		});
+      		就以routes/user.js为例
+      	>>2-1-1: 引入mysql模块
+      		var mysql = require('mysql');
+      	>>2-1-2: 创建数据库链接
+	  		let connection = mysql.createConnection({
+			host: '127.0.0.1',
+			user: 'root',  //用户名
+			password: 'root', //用户密码
+			database: '****' //database
+			});
 		2-1-3: 执行创建连接 
 		connection.connect();
 		2-1-4: 业务逻辑处理
