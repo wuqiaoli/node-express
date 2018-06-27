@@ -33,34 +33,34 @@ node框架express系列教程
       	2.1： 如，创建一个用户查询接口，就以routes/user.js为例
       	2-1-1: 引入mysql模块:var mysql = require('mysql');
       	2-1-2: 创建数据库链接
-      		let connection = mysql.createConnection({
-				host: '127.0.0.1',
-				user: 'root',  //用户名
-				password: 'root', //用户密码
-				database: '****' //database
+  		let connection = mysql.createConnection({
+			host: '127.0.0.1',
+			user: 'root',  //用户名
+			password: 'root', //用户密码
+			database: '****' //database
 		});
 		2-1-3: 执行创建连接 
-			connection.connect();
+		connection.connect();
 		2-1-4: 业务逻辑处理
-			  定义sql语句： let sql = 'select * from user' , //user是指查询的表名
-			  router.get('/', function(req, res, next) {
-				connection.query(sql语句,function (err, result) {
-				        if(err){
-				          console.log('[SELECT ERROR] - ',err.message);
-				          return;
-				        }
-				        let obj = {
-				        	status:'200',
-				        	data:result
-				        }
-				        res.send(obj);
-					});
+		  定义sql语句： let sql = 'select * from user' , //user是指查询的表名
+		  router.get('/', function(req, res, next) {
+			connection.query(sql语句,function (err, result) {
+		        if(err){
+		          console.log('[SELECT ERROR] - ',err.message);
+		          return;
+		        }
+		        let obj = {
+		        	status:'200',
+		        	data:result
+		        }
+		        res.send(obj);
 				});
-				module.exports = router;
+			});
+			module.exports = router;
 		2-1-5:访问路由
-			在app.js中引入
-			var user = require('./routes/users');
-			app.use('/users', user);
+		在app.js中引入
+		var user = require('./routes/users');
+		app.use('/users', user);
 		到此，一个简单的链接数据库就ok.访问http://localhost:3000/users，就可以看到返回的数据。
 	   （就相当于一个接口：http://127.0.0.1:3000/users）
    (4)优化，为了统一管理，进行了模块化管理(粗浅的提供一种思路)
