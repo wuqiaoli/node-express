@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const link = require('../db/db')
 //方法一：便于管理
 let connection = mysql.createConnection(link.mysql)
-//方法二：便于管理
+//方法二：直观
 // var connection = mysql.createConnection({
 // 	host: '127.0.0.1',
 // 	user: 'root',

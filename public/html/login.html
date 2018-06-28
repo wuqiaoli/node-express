@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>vue+element+express 测试登录页</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<style>
+	.login{ position: absolute; left: 50%; top: 50%; width: 600px; height: 300px; margin-left: -300px; margin-top: -150px; box-shadow: #aaaaaa 0px 0px 14px; background: rgba(0,0,0,.1); }
+	.login-b{text-align: center;margin:50px 0px;}
+	.login-a{width: 200px}
+	.login-btn-a{margin-right: 130px}
+	.login-btn-b{margin-left: 130px}
+</style>
+</head>
+<body>
+    <div id="app">
+	  <div class="login">
+	  	<p class="login-b">请输入账号：<el-input class="login-a" placeholder="请输入账号"  v-model="username"></el-input></p>
+	  	<p class="login-b">请输入密码：<el-input class="login-a" placeholder="请输入密码"  v-model="psw" ></el-input></p>
+	  	<p class="login-b">
+	  		<el-button class="login-btn-a" type="success" @click="login">登录</el-button>
+	  		<el-button class="login-btn-b" type="warning">注册</el-button>
+	  	</p>
+	  </div>
+	  	
+	</div>
+	<script>
+	// import axios from 'axios'
+	new Vue({
+	  el: '#app',
+	  data: {
+	   	username:'',
+	   	psw:''
+	  },
+	  methods:{
+	  	login(){
+	  		if(this.username == '' || this.psw == ''){
+	  			alert('请输入密码');
+	  			return
+
+	  		}
+	  		axios.get('/login',{
+	  			params: {
+			      username: this.username,
+			      pwd: this.psw
+			    }
+	  		}).then(function (res) {
+	  			let base = res.data ;
+	  			base.status == 200?alert('登录成功'):alert('用户不存在')
+			})
+			.catch(function (error) {
+			    console.log(error);
+			});
+	  	}
+	  }
+	})
+</script>
+</body>
+</html>

@@ -3,10 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
+var axios = require('axios')
+//测试路由
 var user = require('./routes/users');
-
+//登录页路由
+let login = require('./routes/login')
 var app = express();
 
 // view engine setup
@@ -21,13 +23,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 //访问路由
 app.use('/', indexRouter);
 app.use('/users', user);
-
+app.use('/login',login)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// error handler 错误处理中间件
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;

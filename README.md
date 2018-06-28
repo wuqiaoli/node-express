@@ -75,7 +75,10 @@ node框架express系列教程
 			const sql = require('../mysql/sql')
 			具体代码：请一一对照这几个文件。
 	以上便是一个简单的express框架连接数据库的案例。
-
+三.登录实测
+   为了理解更深，简单编一个了一个登录例子。
+   /public/login.html
+   /routes/login.js
 </pre>
 
 
